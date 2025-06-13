@@ -1,0 +1,23 @@
+References:
+Quick REF: https://www.w3schools.com/js/default.asp
+Namaste JS REF: https://namaste-javascript-handbook.vercel.app/docs/lecture-1
+
+- Ever
+
+- JavaScript -> Everything happens inside a execution context
+- Execution Context = Memory component(Variable Environment) + Code component(Thread of Execution)
+- JavaScript is a synchronous single-threaded language
+
+How a program runs in JS
+1. Global Execution Context made
+2. Memory Creation Phase
+3. Code Execution Phase
+
+Function Call stack works as expected: Call stack maintains the order of execution of execution contexts
+Call Stack synonyms:
+ - Execution Context Stack
+ - Program Stack
+ - Control Stack
+ - Runtime Stack
+ - Machine Stack
+
