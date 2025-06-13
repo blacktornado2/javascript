@@ -1,17 +1,19 @@
 References:
 Quick REF: https://www.w3schools.com/js/default.asp
 Namaste JS REF: https://namaste-javascript-handbook.vercel.app/docs/lecture-1
+Wesbos: 
 
-- Ever
 
+- JavaScript is a synchronous single-threaded language
 - JavaScript -> Everything happens inside a execution context
 - Execution Context = Memory component(Variable Environment) + Code component(Thread of Execution)
-- JavaScript is a synchronous single-threaded language
+- Memory Component = variables and functions are stored as key-value pairs
+- Code Component = where Code run line by line
 
 How a program runs in JS
-1. Global Execution Context made
-2. Memory Creation Phase
-3. Code Execution Phase
+ 1. Global Execution Context made
+ 2. Memory Creation Phase: variables are assigned undefined and function(made using function keyword without assing them to a variable) are stored in memory as it is
+ 3. Code Execution Phase
 
 Function Call stack works as expected: Call stack maintains the order of execution of execution contexts
 Call Stack synonyms:
@@ -21,3 +23,17 @@ Call Stack synonyms:
  - Runtime Stack
  - Machine Stack
 
+Hoisting in JS
+ - Hoisting is a concept in JavaScript that allows variables and function declarations to be accessed before they are actually defined in the code
+ - Variable declarations are scanned and are made undefined
+ - Function declarations are scanned and are made available
+
+
+
+In the browser, global object is window
+In Node.js, global object is global
+
+A function searches for a variable, first in its own local context, then outside it
+
+TODO:
+-> How to use debugger in Chrome? How does a script run
