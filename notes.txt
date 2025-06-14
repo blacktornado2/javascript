@@ -5,6 +5,7 @@ Wesbos:
 
 
 - JavaScript is a synchronous single-threaded language
+- JS is a loosely typed/weakly typed language, It doesn't assign datatype to any variable, we can change data type at runtime
 - JavaScript -> Everything happens inside a execution context
 - Execution Context = Memory component(Variable Environment) + Code component(Thread of Execution)
 - Memory Component = variables and functions are stored as key-value pairs
@@ -29,11 +30,16 @@ Hoisting in JS
  - Function declarations are scanned and are made available
 
 
-
-In the browser, global object is window
-In Node.js, global object is global
+Global Object
+ - In the browser, global object is window
+ - In Node.js, global object is global
 
 A function searches for a variable, first in its own local context, then outside it
+
+ - undefined acts as a placeholder or default value in memory until a variable is assigned a different value.
+ - undefined means that memory has been allocated to a variable but no value has been assigned yet.
+ - not defined refers to a variable that has not been declared or allocated any memory
+
 
 TODO:
 -> How to use debugger in Chrome? How does a script run
