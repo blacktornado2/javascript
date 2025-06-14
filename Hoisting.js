@@ -11,11 +11,28 @@ function getName() {
     return "Ankit";
 }
 
-// console.log(getId());  // ReferenceError: Cannot access 'getId' before initialization, now getId is acting like a variable, irrespective of whether is is arrow or not, or it defined usign let, const or var
+// --------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+getId(); // TypeError: getId is not a function, now getId is acting like a variable, irrespective of whether is is arrow or not, or it defined usign let, const or var
 
 var getId = function () {
     return 1;
 }
+
+
+// --------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+getId(); // ReferenceError: Cannot access 'getId' before initialization
+
+let getId = function () {
+    return 1;
+}
+
+
+// --------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 // console.log(y); // ReferenceError: Cannot access 'y' before initialization; let and const declarations are not hoisted like var
 let y = 10;
@@ -89,8 +106,16 @@ class MyClass {
 
 /*
 Conceptual Questions:
- - What is hoisting in JavaScript?
- - Explain the difference between variable hoisting and function hoisting.
+What is hoisting in JavaScript?
+ - Hoisting is a JavaScript mechanism where variable and function declarations are moved to the top of their containing scope (either global or function scope) by the JavaScript engine before the code is executed.
+ - It's important to understand that it's a conceptual model; the engine doesn't physically move the code.
+ - Instead, during a compilation phase, it scans for all declarations, sets up memory for them, and then executes the code.
+
+
+Explain the difference between variable hoisting and function hoisting.
+ - Function Hoisting: For a function declaration (function myFunction() {}), the entire function, including its body, is hoisted. This means you can call the function successfully before its physical location in the code.
+ - Variable Hoisting: For a variable declared with var (var myVar;), only the declaration is hoisted, not the initialization. The variable is automatically initialized with undefined. You can access the variable before its declaration without an error, but its value will be undefined.
+
  - Are declarations or initializations hoisted? Explain with an example.
  - How does hoisting work with var? What is the initial value of a hoisted var variable?
  - How do let and const handle hoisting?
