@@ -144,8 +144,8 @@ What is the Temporal Dead Zone (TDZ)? Which keywords are affected by it?
 
 
 Why does accessing a let or const variable before its declaration throw a ReferenceError, while a var variable returns undefined?
- - var: The declaration is hoisted and immediately initialized to undefined in its scope
- - Their declarations are hoisted, but they remain uninitialized. They are in the Temporal Dead Zone. The engine knows about them, but accessing them is forbidden until the line of declaration is executed, hence the ReferenceError.
+ - var: The declaration is hoisted and immediately and automatically given value undefined,later when the initialization line is reached, it gets the assigned value.
+ - let and const: Their declarations are hoisted, but they remain uninitialized. They are in the Temporal Dead Zone. The engine knows about them, but accessing them is forbidden until the line of declaration is executed, hence the ReferenceError.
  - This prevents bugs that arise from using a variable before it has been properly initialized.
 
  
