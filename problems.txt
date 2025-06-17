@@ -1,0 +1,7 @@
+What is the difference between map and forEach
+map => returns new array, doesn't change original array, used for transformation, chaining
+forEach => returns undefined, can change original array, used for side effects, no chaining
+
+How to convert a number to string
+const num = 15;
+console.log(num.toString)
