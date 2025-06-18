@@ -7,13 +7,32 @@
 // const num = 15;
 // console.log(typeof num.toString()) // Output: string
 
+const input = [3, 30, 9, 34, 5, 9];
 
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+// Form Largest Number using an array of numbers by concatenation
 function formLargestNumber(arr) {
-    console.log(arr.map(ele => ele.toString()).sort().reverse().join(""));
+    const nums = arr.map(ele => ele.toString());
+
+    // Custom comparator function to sort numbers based on concatenation
+    nums.sort((a, b) => {
+        return (b + a).localeCompare(a + b);
+    });
+
+    if (nums[0] == "0") {
+        return "0";
+    }
+    return nums.join("");
 }
 
-const input = [3, 30, 9, 34, 5, 9];
-// formLargestNumber(input);
+formLargestNumber([54, 546, 548, 60]); // Output: "6054854654"
+// formLargestNumber(input); // Output: "99534330"
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 // const arr = ["2", "100", "9"];
