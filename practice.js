@@ -42,10 +42,12 @@ formLargestNumber([54, 546, 548, 60]); // Output: "6054854654"
 // console.log("Lexical Ascending:", sortedAscending); // ["100", "2", "9"]
 
 
-// setTimeout(function () {
-//     console.log("This is a delayed message");
-// }, 2000);
+setTimeout(function () {
+    console.log("This is a delayed message");
+}, 2000);
 
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Array methods 
 
 // Reduce: very versatile method, can be used as a forEach, map, filter, and more
 // 1st param -> callback function, 2nd param -> Initial value of accumulator
@@ -58,3 +60,42 @@ input.reduce((acc, curr) => {
 
 // Find max value in array
 input.reduce((acc, curr) => Math.max(acc, curr), -Infinity);
+
+// Slice: slice() method creates a new array
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const citrus = fruits.slice(1) // ["Orange", "Lemon", "Apple", "Mango"]
+const citrus2 = fruits.slice(1, 3) // ["Orange", "Lemon"] end index is exclusive
+const citrus3 = fruits.slice(-2) // ["Apple", "Mango"]
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// String methods 
+function capitalizeWords(sentence) {
+    return sentence.trim().toLowerCase().split(" ").filter(ele => ele !== "").map((ele) => ele[0].toUpperCase() + ele.slice(1)).join(" ");
+}
+
+console.log(capitalizeWords("    multiple     spaces    "));
+
+
+
+function validatePalindrome(str) {
+    str = str.toLowerCase();
+    let start = 0, end = str.length - 1;
+    while (start <= end) {
+        if (!/^[a-zA-Z0-9]$/.test(str[start])) {
+            start++;
+            continue;
+        }
+        if (!/^[a-zA-Z0-9]$/.test(str[end])) {
+            end--;
+            continue;
+        }
+        if (str[start] != str[end]) return false;
+        start++;
+        end--;
+    }
+    return true;
+}
+
+validatePalindrome("race a car");
+
+// TODO: Learn basic regex
