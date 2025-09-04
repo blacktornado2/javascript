@@ -1,37 +1,53 @@
 setTimeout(() => {
-    console.log("This is a delayed message");
+  console.log("This is a delayed message");
 }, 2000);
-
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+const api = {
+  createOrder: function (cart, callback) {
+    console.log("createOrder called with cart:", cart);
+    callback();
+  },
+  proceedToPayment: function (callback) {
+    console.log("proceedToPayment called");
+    callback();
+  },
+  showOrderSummary: function (callback) {
+    console.log("showOrderSummary called");
+    callback();
+  },
+  updateWallet: function () {
+    console.log("updateWallet called");
+  },
+};
+
+
 const cart = ["Shoes", "Shirt", "Pants", "Glasses"];
 
-api.createOrder();
+// Steps to create and place an order
 
-api.proceedToPayment();
+// api.createOrder();
+// api.proceedToPayment();
+// api.showOrderSummary();
+// api.updateWallet();
 
-api.showOrderSummary();
-
-api.updateWallet();
-
-// We have to do something in order => create order first, then proceed to payment => show order summary => update wallet
+// We have to do this in sequence: create order => proceed to payment => show order summary => update wallet
 // and we can't change the order of these operations
 
 api.createOrder(cart, function () {
-    api.proceedToPayment(function () {
-        api.showOrderSummary(function () {
-            api.updateWallet();
-        });
+  api.proceedToPayment(function () {
+    api.showOrderSummary(function () {
+      api.updateWallet();
     });
+  });
 });
 
 // Callback hell, Pyramid of Doom
 
-
 // Inversion of Control
 api.createOrder(cart, function () {
-    api.proceedToPayment();
+  api.proceedToPayment();
 });
 
 // We gave the control to createOrder function to call the callback function when it is done

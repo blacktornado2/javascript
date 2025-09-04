@@ -1,7 +1,7 @@
 References:
-Quick REF: https://www.w3schools.com/js/default.asp
-Namaste JS REF: https://namaste-javascript-handbook.vercel.app/docs/lecture-1
-Interview Questions REF: https://www.geeksforgeeks.org/javascript/javascript-interview-questions/
+Quick reference: https://www.w3schools.com/js/default.asp
+Namaste JS reference: https://namaste-javascript-handbook.vercel.app/docs/lecture-1
+Interview Questions reference: https://www.geeksforgeeks.org/javascript/javascript-interview-questions/
 Wesbos REF: https://wesbos.com/javascript
 
 
