@@ -1,10 +1,11 @@
-References:
-Quick reference: https://www.w3schools.com/js/default.asp
-Namaste JS reference: https://namaste-javascript-handbook.vercel.app/docs/lecture-1
-Interview Questions reference: https://www.geeksforgeeks.org/javascript/javascript-interview-questions/
-Wesbos REF: https://wesbos.com/javascript
+References: 
+---
+Quick reference: https://www.w3schools.com/js/default.asp <br/>
+Namaste JS reference: https://namaste-javascript-handbook.vercel.app/docs/lecture-1 <br/>
+Interview Questions reference: https://www.geeksforgeeks.org/javascript/javascript-interview-questions/ <br/>
+Wesbos Reference: https://wesbos.com/javascript <br/>
 
-
+---
 - JavaScript is a synchronous single-threaded language
 - JS is a loosely typed/weakly typed language, It doesn't assign datatype to any variable, we can change data type at runtime
 - JavaScript -> Everything happens inside a execution context
@@ -50,3 +51,7 @@ Functions:
 
 TODO:
 -> How to use debugger in Chrome? How does a script run
+-> Synchronous vs Asynchronous
+-> Call apply bind
+-> MUtation observer
+-> debouncing, throttling
