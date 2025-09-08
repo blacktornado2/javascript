@@ -1,10 +1,14 @@
 References: 
 ---
-Quick reference: https://www.w3schools.com/js/default.asp <br/>
-Namaste JS reference: https://namaste-javascript-handbook.vercel.app/docs/lecture-1 <br/>
-Interview Questions reference: https://www.geeksforgeeks.org/javascript/javascript-interview-questions/ <br/>
-Wesbos Reference: https://wesbos.com/javascript <br/>
-
+ - Quick reference: https://www.w3schools.com/js/default.asp <br/>
+ - Namaste JS reference: https://namaste-javascript-handbook.vercel.app/docs/lecture-1 <br/>
+ - Wesbos Reference: https://wesbos.com/javascript <br/>
+ - JS Practice: https://namastedev.com/practice?search=&sortBy=default&language=js&difficulty_level=All&status=All&companies=All&tags=All&page=1 <br/>
+ - 30 Exercises: https://javascript30.com/ <br/>
+ - Interview Questions reference: https://www.geeksforgeeks.org/javascript/javascript-interview-questions/ <br/>
+ - JS Interview Questions - 1: https://blog.webdevsimplified.com/2025-08/javascript-interview-questions/ <br/>
+ - JS Interview Questions - 2: https://github.com/greatfrontend/top-javascript-interview-questions
+---
 ---
 - JavaScript is a synchronous single-threaded language
 - JS is a loosely typed/weakly typed language, It doesn't assign datatype to any variable, we can change data type at runtime
