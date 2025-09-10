@@ -1,4 +1,4 @@
-# 10 High-Quality JavaScript Promise Interview Questions
+# 15 High-Quality JavaScript Interview Questions
 
 ## Questions
 
@@ -34,6 +34,81 @@
  9. **`Promise.race()` vs. `Promise.any()`**: Explain the key differences between `Promise.race()` and `Promise.any()`. When would you choose one over the other?
 
 10. **Unhandled Promise Rejections**: What happens when a promise is rejected but has no `.catch()` handler? How can you globally catch these unhandled rejections in Node.js and the browser?
+
+11. **`this` Context and Throttling**: What will be logged to the console from the following code? If the `throttle` implementation had used an arrow function for its returned function (`return () => { ... }`), what would have been logged instead, and why?
+    ```javascript
+    // Assume 'throttle' is a correctly implemented function that
+    // handles 'this' and arguments properly.
+    const throttle = (func, delay) => {
+      let inProgress = false;
+      return function(...args) {
+        if (inProgress) return;
+        inProgress = true;
+        func.apply(this, args);
+        setTimeout(() => {
+          inProgress = false;
+        }, delay);
+      }
+    };
+
+    const scroller = {
+      position: 0,
+      reportPosition: function() {
+        console.log('Current position:', this.position);
+      },
+      setPosition: function(p) {
+        this.position = p;
+        this.throttledReport();
+      },
+    };
+
+    scroller.throttledReport = throttle(scroller.reportPosition, 100);
+
+    // Simulate rapid scroll events
+    scroller.setPosition(10);
+    scroller.setPosition(20);
+    scroller.setPosition(30);
+    ```
+
+12. **Implementing a "Trailing" Throttle**: The provided `leadingThrottle` function fires on the "leading" edge (the first call in a burst is executed immediately). How would you modify this function to create a `trailingThrottle` where the function only executes *after* the `delay` has passed?
+    ```javascript
+    function leadingThrottle(func, delay) {
+      let inProgress = false;
+      return function(...args) {
+        if (inProgress) return;
+        inProgress = true;
+        func.apply(this, args);
+        setTimeout(() => {
+          inProgress = false;
+        }, delay);
+      }
+    }
+    ```
+
+13. **Debounce with Leading and Trailing Options**: How would you implement a `debounce` function that accepts an `options` object, allowing the user to specify `leading: true`? The function signature would be `debounce(func, delay, { leading: false })`.
+
+14. **Adding a `.cancel()` Method to Debounce**: How would you add a `.cancel()` method to the returned `debouncedFn`? The `debouncedFn.cancel()` call should prevent any pending function execution from happening.
+    ```javascript
+    function debounce(func, delay) {
+      let timerId;
+      const debouncedFn = function(...args) {
+        clearTimeout(timerId);
+        timerId = setTimeout(() => {
+          func.apply(this, args);
+        }, delay);
+      };
+
+      // How do you add the .cancel() method here?
+
+      return debouncedFn;
+    }
+    ```
+
+15. **Precise Output Prediction**: A function `log` is debounced with a **200ms** delay. Given the timeline of calls below, exactly how many times will the `log` function be executed, what arguments will it be called with, and at approximately what timestamps (`t=???ms`) will the executions occur?
+    *   `t=0ms`: `debouncedLog('A')` is called.
+    *   `t=150ms`: `debouncedLog('B')` is called.
+    *   `t=300ms`: `debouncedLog('C')` is called.
+    *   `t=600ms`: `debouncedLog('D')` is called.
 
 ## Answers
 
@@ -268,3 +343,127 @@ process.on('unhandledRejection', (reason, promise) => {
   console.error('Unhandled Rejection at:', promise, 'reason:', reason);
 });
 ```
+
+### 11. `this` Context and Throttling
+
+**Answer:**
+
+The console will log:
+```
+Current position: 10
+```
+
+**Reasoning:**
+1.  The provided `throttle` function is a "leading edge" implementation. It executes the function immediately on the first call and then blocks subsequent calls for the duration of the `delay`.
+2.  `scroller.setPosition(10)` is the first call. `throttledReport` executes `reportPosition` immediately. `this` is correctly bound to `scroller` because of `func.apply(this, args)`, so `this.position` is `10`.
+3.  `scroller.setPosition(20)` and `scroller.setPosition(30)` are called within the 100ms cooldown period, so they are ignored.
+
+If an arrow function were used (`return () => { ... }`), `this` would not be dynamically bound. It would be inherited from the parent scope. In a browser's global scope (and non-strict mode), `this` would be the `window` object. The console would log `Current position: undefined` because `window.position` does not exist.
+
+### 12. Implementing a "Trailing" Throttle
+
+**Answer:**
+
+To create a "trailing" throttle, you must ensure the function call happens *after* the delay, not before. This is done by managing a timeout and only executing the function within the `setTimeout` callback.
+
+```javascript
+function trailingThrottle(func, delay) {
+  let timeoutId = null;
+  return function(...args) {
+    // If a timeout is already scheduled, do nothing.
+    if (timeoutId) {
+      return;
+    }
+    // Schedule the function to run after the delay.
+    timeoutId = setTimeout(() => {
+      func.apply(this, args);
+      // Clear the timeoutId to allow the next call to be scheduled.
+      timeoutId = null;
+    }, delay);
+  }
+}
+```
+This implementation ensures that it only executes once per `delay` period, and the execution happens at the end of that period. Note that this simple version uses the arguments from the first call in a burst; a more complex version could track and use the latest arguments.
+
+### 13. Debounce with Leading and Trailing Options
+
+**Answer:**
+
+This requires managing state to know if the leading call has already occurred within a burst.
+
+```javascript
+function debounce(func, delay, { leading = false } = {}) {
+  let timerId = null;
+
+  return function(...args) {
+    // Check if we should execute on the leading edge
+    const isLeadingCall = leading && !timerId;
+
+    // Always clear the previous timer to reset the delay
+    clearTimeout(timerId);
+
+    timerId = setTimeout(() => {
+      // Only call on the trailing edge if leading was not called
+      if (!leading) {
+        func.apply(this, args);
+      }
+      // Reset timer for the next burst
+      timerId = null;
+    }, delay);
+
+    // If it was a leading call, execute it now
+    if (isLeadingCall) {
+      func.apply(this, args);
+    }
+  };
+}
+```
+This implementation will call the function immediately if `leading` is true and there's no active timer, and will handle the standard trailing-edge call otherwise.
+
+### 14. Adding a `.cancel()` Method to Debounce
+
+**Answer:**
+
+You can add a method to the returned function object itself. This method will have access to the `timerId` from the closure, allowing it to clear the timeout.
+
+```javascript
+function debounce(func, delay) {
+  let timerId;
+
+  const debouncedFn = function(...args) {
+    clearTimeout(timerId);
+    timerId = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
+
+  // Attach the cancel method to the returned function
+  debouncedFn.cancel = function() {
+    clearTimeout(timerId);
+  };
+
+  return debouncedFn;
+}
+
+// --- Usage ---
+// const myDebouncedFunc = debounce(() => console.log('Fired!'), 1000);
+// myDebouncedFunc(); // Schedule the function
+// myDebouncedFunc.cancel(); // Prevent it from firing
+```
+
+### 15. Precise Output Prediction
+
+**Answer:**
+
+The function will be executed **2 times**.
+
+1.  **First Execution:** with argument `'C'` at `t=500ms`.
+2.  **Second Execution:** with argument `'D'` at `t=800ms`.
+
+**Reasoning:**
+1.  `t=0ms`: `debouncedLog('A')` is called. A timer is set to fire at `t=200ms`.
+2.  `t=150ms`: `debouncedLog('B')` is called. The previous timer is **cleared**. A new timer is set to fire at `t=(150 + 200) = 350ms`.
+3.  `t=300ms`: `debouncedLog('C')` is called. The previous timer is **cleared**. A new timer is set to fire at `t=(300 + 200) = 500ms`.
+4.  `t=500ms`: The timer fires. The last scheduled function executes with the last provided arguments. **Console logs 'C'**.
+5.  `t=600ms`: `debouncedLog('D')` is called. A new timer is set to fire at `t=(600 + 200) = 800ms`.
+6.  `t=800ms`: The timer fires. **Console logs 'D'**.
