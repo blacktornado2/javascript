@@ -13,6 +13,91 @@ References:
 ---
 ---
 
+Topics:
+ - call, apply, bind: DONE
+ - polyfill for bind method: DONE
+ - function currying: DONE
+ - Debouncing: DONE
+ - Throttling: DONE
+ - async vs. defer: DONE (https://dev.to/fidalmathew/async-vs-defer-in-javascript-which-is-better-26gm)
+ - Event Bubbling and Event Capturing(Trickling): DONE
+ - Event Delegation:
+ - sum(a)(b)(c)(b): DONE
+ - Prototype and Prototypal Inheritance:
+ - CORS: DONE (https://javascript.info/fetch-crossorigin)
+ - Machine Coding: 
+ - Local Storage & Session Storage:
+ - How browser rendering works(https://blog.logrocket.com/how-browser-rendering-works-behind-scenes/)
+ - Preload Scanner(https://web.dev/articles/preload-scanner):
+ - Optimisation techniques in JS:
+
+ - Data Types and structures: primitive and non-primitive
+ - How JS works, Execution Stack
+ - How JS code is executed, Call stack
+ - Hoisting in JS
+ - How functions work in JS
+ - window object
+ - undefined vs not defined
+ - Scope, Scope Chain and Lexical Environment
+ - var, let and const: Scope, Hoisting and Immutability
+ - Block Scope and Shadowing
+ - Closures - Intro
+ - Closures - Intermediate
+ - Closures - Advanced
+ - All about functions
+ - Callback Functions
+ - Async JS & Event Loop
+ - JS Engine, V8 architecture
+ - setTimeout
+ - Higher Order Functions
+ - map, filter and reduce
+ - Callback Hell
+ - Promises: Intro
+ - Promises: Intermediate
+ - Promises: Advanced
+ - Async-Await
+
+ - Regex
+ - DOM render
+ - Single and Double Click
+ - Async Progress bar
+ - Matching Element in DOM
+ - Array Polyfills
+ - Array Push Event
+ - Async Task with dependency
+ - Basic Debouncing: DONE
+ - Basic Throttling
+ - Call, Apply and Bind
+ - Cancelable Promise
+ - Chain calculator
+ - Clear all timeout
+ - Currying
+ - Custom JSON stringify
+ - Deep Clone Object
+ - Document Comparison
+ - Event Emitter
+ - Extended Event Emitter
+ - Flatten Array
+ - group by polyfill
+ - Index file
+ - Map limit
+ - Memoization
+ - Mutation observer
+ - Object flattening
+ - Pipe and compose
+ - Promise.All
+ - Promise.AllSettled
+ - Promise.Any
+ - Promise.Race
+ - Prototype Inheritance
+ - Retry Promises
+ - Sequential Promises
+ - Sort Array
+ - Typehead Search
+ - AbortController
+
+---
+Notes:
 - JavaScript is a synchronous single-threaded language
 - JS is a loosely typed/weakly typed language, It doesn't assign datatype to any variable, we can change data type at runtime
 - JavaScript -> Everything happens inside a execution context
@@ -59,90 +144,3 @@ Functions:
 TODO:
 -> How to use debugger in Chrome? How does a script run
 -> Synchronous vs Asynchronous
--> Call apply bind
--> MUtation observer
--> debouncing, throttling
-
-
-Topics:
- - call, apply, bind: DONE
- - polyfill for bind method: DONE
- - function currying: DONE
- - Debouncing: DONE
- - Throttling: DONE
- - async vs. defer: DONE (https://dev.to/fidalmathew/async-vs-defer-in-javascript-which-is-better-26gm)
- - Event Bubbling and Event Capturing(Trickling): DONE
- - Event Delegation:
- - sum(a)(b)(c)(b): DONE
- - Prototype and Prototypal Inheritance:
- - CORS: DONE (https://javascript.info/fetch-crossorigin)
- - Machine Coding: 
- - Local Storage & Session Storage:
- - How browser rendering works(https://blog.logrocket.com/how-browser-rendering-works-behind-scenes/)
- - Preload Scanner(https://web.dev/articles/preload-scanner):
- - Optimisation techniques in JS:
-
- - Data Types and structures: primitive and non-primitive
- - How JS works, Execution Stack
- - How JS code is executed, Call stack
- - Hoisting in JS
- - How functions work in JS
- - window object
- - undefined vs not defined
- - Scope, Scope Chain and Lexical Environment
- - var, let and const: Scope, Hoisting and Immutability
- - Block Scope and Shadowing
- - Closures - Intro
- - Closures - Intermediate
- - Closures - Advanced
- - All about functions
- - Callback Functions
- - Async JS & Event Loop
- - JS Engine, V8 architecture
- - setTimeout
- - Higher Order Functions
- - map, filter and reduce
- - Callback Hell
- - Promises: Intro
- - Promises: Intermediate
- - Promises: Advanced
- - Async-Await
-
-
- - Regex
- - DOM render
- - Single and Double Click
- - Async Progress bar
- - Matching Element in DOM
- - Array Polyfills
- - Array Push Event
- - Async Task with dependency
- - Basic Debouncing: DONE
- - Basic Throttling
- - Call, Apply and Bind
- - Cancelable Promise
- - Chain calculator
- - Clear all timeout
- - Currying
- - Custom JSON stringify
- - Deep Clone Object
- - Document Comparison
- - Event Emitter
- - Extended Event Emitter
- - Flatten Array
- - group by polyfill
- - Index file
- - Map limit
- - Memoization
- - Object flattening
- - Pipe and compose
- - Promise.All
- - Promise.AllSettled
- - Promise.Any
- - Promise.Race
- - Prototype Inheritance
- - Retry Promises
- - Sequential Promises
- - Sort Array
- - Typehead Search
- - AbortController
