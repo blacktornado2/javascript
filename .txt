@@ -1,1 +1,0 @@
--> Always put the JS before the closing </body> tag, so that it loads after the 
