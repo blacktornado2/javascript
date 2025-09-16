@@ -7,30 +7,22 @@ References:
  - 30 Exercises: https://javascript30.com/ <br/>
  - Interview Questions reference: https://www.geeksforgeeks.org/javascript/javascript-interview-questions/ <br/>
  - JS Interview Questions - 1: https://blog.webdevsimplified.com/2025-08/javascript-interview-questions/ <br/>
- - JS Interview Questions - 2: https://github.com/greatfrontend/top-javascript-interview-questions
+ - JS Interview Questions - 2: https://github.com/greatfrontend/top-javascript-interview-questions <br/>
  - Comprehensive blogs: https://javascript.info/ <br/>
 ---
 
-Topics:
----
- - call, apply, bind: DONE
- - polyfill for bind method: DONE
- - function currying: DONE
- - Debouncing: DONE
- - Throttling: DONE
- - async vs. defer: DONE (https://dev.to/fidalmathew/async-vs-defer-in-javascript-which-is-better-26gm)
- - Event Bubbling and Event Capturing(Trickling): DONE
- - Event Delegation:
- - sum(a)(b)(c)(b): DONE
- - Prototype and Prototypal Inheritance:
- - CORS: DONE (https://javascript.info/fetch-crossorigin)
- - Machine Coding: 
- - Local Storage & Session Storage:
- - How browser rendering works(https://blog.logrocket.com/how-browser-rendering-works-behind-scenes/)
- - Preload Scanner(https://web.dev/articles/preload-scanner):
- - Optimisation techniques in JS:
 
- - Data Types and structures: primitive and non-primitive
+Framework (Problem based learning):
+---
+1. Prepare 5-10 questions on a particular topic
+2. Try to solve all the questions
+3. Find the gaps in knowledge
+4. Code and explore
+5. Re-iterate
+
+Basics:
+---
+ - Data Types and structures: primitive and non-primitive 
  - How JS works, Execution Stack
  - How JS code is executed, Call stack
  - Hoisting in JS
@@ -54,12 +46,37 @@ Topics:
  - Promises: Intro
  - Promises: Intermediate
  - Promises: Advanced
- - Async-Await: Intro: DONE
+ - Async-Await: Intro: ✅
  - Async-Await Intermediate
  - Async-Await: Advanced
- - this keyword: DONE
+ - this keyword: ✅
  - ES6 features
  
+Intermediate:
+---
+ - call, apply, bind: ✅
+ - polyfill for bind method: ✅
+ - function currying: ✅
+ - Debouncing: ✅
+ - Throttling: ✅
+ - async vs. defer: ✅ (https://dev.to/fidalmathew/async-vs-defer-in-javascript-which-is-better-26gm)
+ - Event Bubbling and Event Capturing(Trickling): ✅
+ - Event Delegation:
+ - sum(a)(b)(c)(b): ✅
+ - Prototype and Prototypal Inheritance:
+ - CORS: ✅ (https://javascript.info/fetch-crossorigin)
+ - Machine Coding:
+ - Promise.All
+ - Promise.AllSettled
+ - Promise.Any
+ - Promise.Race
+ - Local Storage & Session Storage:
+ - How browser rendering works: (https://blog.logrocket.com/how-browser-rendering-works-behind-scenes/)
+ - Preload Scanner: (https://web.dev/articles/preload-scanner):
+ - Optimisation techniques in JS:
+
+Advanced:
+--- 
  - Regex
  - DOM render
  - Single and Double Click
@@ -68,9 +85,6 @@ Topics:
  - Array Polyfills
  - Array Push Event
  - Async Task with dependency
- - Basic Debouncing: DONE
- - Basic Throttling
- - Call, Apply and Bind
  - Cancelable Promise
  - Chain calculator
  - Clear all timeout
@@ -88,10 +102,6 @@ Topics:
  - Mutation observer
  - Object flattening
  - Pipe and compose
- - Promise.All
- - Promise.AllSettled
- - Promise.Any
- - Promise.Race
  - Prototype Inheritance
  - Retry Promises
  - Sequential Promises
