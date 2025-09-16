@@ -80,3 +80,14 @@ async function getPostAwait(id) {
 }
 
 getPostAwait(1);
+
+
+/* New way of thinking 
+  1. const data = fetchData();
+  2. const data = await fetchData();
+
+  1. data will have promise
+  2. data will have actual data
+  Principle: await will wait for the expression after it, to be fulfilled and then the valued will be assigned to the variable to the left
+  direct call -> return promise, with await -> result of promise
+*/
