@@ -1,12 +1,12 @@
-// Beginner
-
-// 1. Fetching User Data 🧍
-// Problem: Create an async function called getUser that fetches data from the JSONPlaceholder API
-// for a single user (e.g., user with ID 1). The function should then log the user's name to the console
+// Beginner Level Problems
 
 const GET_USER_URL = "https://jsonplaceholder.typicode.com/users";
 const GET_POST_URL = "https://jsonplaceholder.typicode.com/posts";
 const GET_TODO_URL = "https://jsonplaceholder.typicode.com/todos";
+
+// 1. Fetching User Data 🧍
+// Problem: Create an async function called getUser that fetches data from the JSONPlaceholder API
+// for a single user (e.g., user with ID 1). The function should then log the user's name to the console
 
 async function getUser(id) {
   const res = await fetch(`${GET_USER_URL}/${id}`);
@@ -22,7 +22,7 @@ async function getUser(id) {
 // as arguments. The function should wait for the specified delay and then log a greeting message like "Hello, [Name]!" to the console.
 
 function delay(delayTime) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     setTimeout(resolve, delayTime * 1000);
   });
 }
