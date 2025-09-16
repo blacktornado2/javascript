@@ -54,8 +54,12 @@ Topics:
  - Promises: Intro
  - Promises: Intermediate
  - Promises: Advanced
- - Async-Await
-
+ - Async-Await: Intro: DONE
+ - Async-Await Intermediate
+ - Async-Await: Advanced
+ - this keyword: DONE
+ - ES6 features
+ 
  - Regex
  - DOM render
  - Single and Double Click
