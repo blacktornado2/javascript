@@ -9,11 +9,10 @@ References:
  - JS Interview Questions - 1: https://blog.webdevsimplified.com/2025-08/javascript-interview-questions/ <br/>
  - JS Interview Questions - 2: https://github.com/greatfrontend/top-javascript-interview-questions
  - Comprehensive blogs: https://javascript.info/ <br/>
-
----
 ---
 
 Topics:
+---
  - call, apply, bind: DONE
  - polyfill for bind method: DONE
  - function currying: DONE
