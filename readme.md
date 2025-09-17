@@ -35,12 +35,12 @@
 - Closures - Intro:
 - Closures - Intermediate:
 - Closures - Advanced:
-- All about functions
+- All about functions: ✅
 - Callback Functions: ✅
-- Async JS & Event Loop
+- Async JS & Event Loop: ✅
 - JS Engine, V8 architecture
 - setTimeout
-- Higher Order Functions
+- Higher Order Functions: ✅
 - map, filter and reduce: ✅
 - Callback Hell: ✅
 - Promises: Intro: ✅
@@ -50,7 +50,7 @@
 - Async-Await Intermediate: ✅
 - Async-Await: Advanced
 - this keyword: ✅
-- ES6 features
+- ES6 features: ✅
 
 ## Intermediate:
 
@@ -75,7 +75,7 @@
 - Preload Scanner: (https://web.dev/articles/preload-scanner):
 - Optimisation techniques in JS:
 
-Advanced:
+## Advanced:
 
 ---
 
@@ -113,6 +113,8 @@ Advanced:
 - AbortController
 
 ## Notes:
+
+---
 
 - data types in JS: primitive and non-primitive
 - primitive: Number, string, bigint, boolean, symbol, null, undefined (store only single value)
