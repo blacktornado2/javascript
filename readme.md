@@ -32,9 +32,9 @@
 - Scope, Scope Chain and Lexical Environment: ✅
 - var, let and const: Scope, Hoisting and Immutability: ✅
 - Block Scope and Shadowing: ✅
-- Closures - Intro:
-- Closures - Intermediate:
-- Closures - Advanced:
+- Closures - Intro: TODO
+- Closures - Intermediate: TODO
+- Closures - Advanced: TODO
 - All about functions: ✅
 - Callback Functions: ✅
 - Async JS & Event Loop: ✅
