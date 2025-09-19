@@ -1,13 +1,13 @@
 ## References:
 
 - Quick reference: https://www.w3schools.com/js/default.asp <br/>
-- Namaste JS reference: https://namaste-javascript-handbook.vercel.app/docs/lecture-1 <br/>
-- Wesbos Reference: https://wesbos.com/javascript <br/>
 - JS Practice: https://namastedev.com/practice?search=&sortBy=default&language=js&difficulty_level=All&status=All&companies=All&tags=All&page=1 <br/>
-- 30 Exercises: https://javascript30.com/ <br/>
+- Namaste JS reference: https://namaste-javascript-handbook.vercel.app/docs/lecture-1 <br/>
 - Interview Questions reference: https://www.geeksforgeeks.org/javascript/javascript-interview-questions/ <br/>
 - JS Interview Questions - 1: https://blog.webdevsimplified.com/2025-08/javascript-interview-questions/ <br/>
 - JS Interview Questions - 2: https://github.com/greatfrontend/top-javascript-interview-questions <br/>
+- 30 Exercises: https://javascript30.com/ <br/>
+- Wesbos Reference: https://wesbos.com/javascript <br/>
 - Comprehensive blogs: https://javascript.info/ <br/>
 
 ---
@@ -32,23 +32,23 @@
 - Scope, Scope Chain and Lexical Environment: ✅
 - var, let and const: Scope, Hoisting and Immutability: ✅
 - Block Scope and Shadowing: ✅
-- Closures - Intro: TODO
-- Closures - Intermediate: TODO
-- Closures - Advanced: TODO
+- Closures - Intro: ✅
+- Closures - Intermediate: ✅
+- Closures - Advanced: ✅
 - All about functions: ✅
 - Callback Functions: ✅
 - Async JS & Event Loop: ✅
-- JS Engine, V8 architecture
-- setTimeout
+- JS Engine, V8 architecture: ✅
+- setTimeout: ✅
 - Higher Order Functions: ✅
 - map, filter and reduce: ✅
 - Callback Hell: ✅
 - Promises: Intro: ✅
-- Promises: Intermediate
-- Promises: Advanced
+- Promises: Intermediate: ✅
+- Promises: Advanced: ✅
 - Async-Await: Intro: ✅
 - Async-Await Intermediate: ✅
-- Async-Await: Advanced
+- Async-Await: Advanced: ✅
 - this keyword: ✅
 - ES6 features: ✅
 
@@ -62,18 +62,17 @@
 - async vs. defer: ✅ (https://dev.to/fidalmathew/async-vs-defer-in-javascript-which-is-better-26gm)
 - Event Bubbling and Event Capturing(Trickling): ✅
 - Event Delegation: ✅ (https://javascript.info/event-delegation)
-- sum(a)(b)(c)(b): ✅
+- sum(a)(b)(c)(b) (currying): ✅
 - Prototype and Prototypal Inheritance:
 - CORS: ✅ (https://javascript.info/fetch-crossorigin)
-- Machine Coding:
-- Promise.All: ✅
-- Promise.AllSettled: ✅
-- Promise.Any: ✅
-- Promise.Race: ✅
-- Local Storage & Session Storage:
+- Promise.all, Promise.allSettled, Promise.any, Promise.race: ✅
+- Cookies: ✅ (https://javascript.info/cookie)
+- Local Storage & Session Storage: ✅ (https://javascript.info/localstorage)
+- Optimisation techniques in JS:
+- Asynchronous flow control: https://nodejs.org/en/learn/asynchronous-work/asynchronous-flow-control
 - How browser rendering works: (https://blog.logrocket.com/how-browser-rendering-works-behind-scenes/)
 - Preload Scanner: (https://web.dev/articles/preload-scanner):
-- Optimisation techniques in JS:
+- Machine Coding:
 
 ## Advanced:
 
@@ -177,8 +176,4 @@ The process of going one by one to parent and checking for values is called scop
 
 ---
 
-Functions:
-
 TODO:
--> How to use debugger in Chrome? How does a script run
--> Synchronous vs Asynchronous

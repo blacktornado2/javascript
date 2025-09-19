@@ -9,7 +9,7 @@ function fun1() {
 
 // Closure -> combination of a function bundled together with references to its lexical scope
 // Whenever function is returned, even if its vanished in execution context but still it remembers the reference it was pointing to
-// access to an outer function's scope from an inner function
+// In short: access to an outer function's scope from an inner function
 
 function fun3() {
   var x = 21;
@@ -54,7 +54,6 @@ const fun = z();
    - Over consumption of memory
    - Memory Leak
    - Freeze browser
-
 */
 
 // Closure and setTimeout
@@ -85,6 +84,17 @@ const timer3 = (seconds) => {
   }
 };
 // timer3(5);
+
+const timer4 = (seconds) => {
+  for (var i = 1; i <= seconds; i++) {
+    (function (j) {
+      setTimeout(function timer() {
+        console.log(j);
+      }, j * 1000);
+    })(i);
+  }
+};
+timer4(5);
 
 // ------------------------------------------------------------------------------------------------------------
 
@@ -169,3 +179,41 @@ function fun9() {
     console.log(x); // Since y is not used here, y will be garbage collected
   };
 }
+
+// Caching
+function memoizedSquare() {
+  const cache = {}; // The cache is kept "alive" in the closure
+
+  return function(num) {
+    if (num in cache) {
+      console.log('Fetching from cache:', num);
+      return cache[num];
+    } else {
+      console.log('Calculating result...');
+      const result = num * num;
+      cache[num] = result;
+      return result;
+    }
+  };
+}
+
+const square = memoizedSquare();
+console.log(square(5)); // Calculating result... 25
+console.log(square(5)); // Fetching from cache: 5, 25
+console.log(square(10)); // Calculating result... 100
+console.log(square(10)); // Fetching from cache: 10, 100
+
+// A slight variation of classic question
+function createFunctions() {
+  var result = [];
+  for (var i = 0; i < 3; i++) {
+    result[i] = function() {
+      return i;
+    };
+  }
+  return result;
+}
+const funcs = createFunctions();
+console.log(funcs[0]());
+console.log(funcs[1]());
+console.log(funcs[2]());
